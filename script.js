@@ -3,10 +3,8 @@ let playerScore = 0;
 let computerScore = 0;
 
 function getComputerChoice(){
-    //let choices = ["Rock", "Paper", "Scissors"];
     let randomNumber = Math.floor(Math.random() * 3);
     let randomComputerChoice = choices[randomNumber];
-    //console.log("computer choice: " + randomChoice);
     return randomComputerChoice;
 }
 
@@ -30,25 +28,21 @@ function playRound(playerSelection, computerSelection){
     }
 
     let computerSelectionIndex = choices.indexOf(computerSelection)+1;
-    //console.log("p: " + playerSelection);
-    //console.log("c: " + computerSelectionIndex);
     
     let checkWinner = computerSelectionIndex - playerSelection;
-    //console.log(checkWinner);
 
     let winner;
     if(checkWinner == -1 || checkWinner == 2){
         winner = "+++ Player wins! +++";
-        playerScore++;
+        ++playerScore;
     }else if(checkWinner == 1 || checkWinner == -2){
         winner = "+++ Computer wins! +++";
-        computerScore++;
+        ++computerScore;
     }else if(checkWinner == 0){
         winner = "+++ Draw +++";
     }else{
         winner = "Invalid Choice, retry";
     }
-    //console.log("playRound() running");
     return winner;
 }
 
@@ -79,8 +73,5 @@ function game(){
     playerScore = 0;
     computerScore = 0;
 }
-//console.log(playRound("rock", getComputerChoice()));
+
 game();
-//let playerSelection = "scissors";
-//console.log("player choice: " + playerSelection);
-//console.log(playRound(playerSelection, getComputerChoice()));
