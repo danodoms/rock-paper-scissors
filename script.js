@@ -47,22 +47,24 @@ function playRound(playerSelection, computerSelection){
 }
 
 function game(){
-    for(let i=0; i<5; i++){
-        let drawFilter;          
-        do{
-            let playerSelection = prompt("Rock, Paper, Scissors");
-            let computerSelection = getComputerChoice();
-            drawFilter = playRound(playerSelection, computerSelection);
+    let roundCounter = 0;
+    let maxScore = 5;
 
-            console.log("Round " + (i+1));
-            console.log("Player: " + playerSelection);
-            console.log("Computer: " + computerSelection);
+    while(playerScore < maxScore || computerScore < maxScore){
+        let playerSelection = prompt("Rock, Paper, Scissors");
+        let computerSelection = getComputerChoice();
 
-            console.log(playRound(playerSelection, computerSelection));
-            console.log(`Scoreboard | Player: ${playerScore} Computer: ${computerScore}`);
-            console.log("");
-        }while (drawFilter == "+++ Draw +++" || drawFilter == "+++ Invalid Choice, retry +++") 
+        console.log("Round " + (roundCounter+1));
+        console.log("Player: " + playerSelection);
+        console.log("Computer: " + computerSelection);
+
+        console.log(playRound(playerSelection, computerSelection));
+        console.log(`Scoreboard | Player: ${playerScore} Computer: ${computerScore}`);
+        console.log("");
+
+        ++roundCounter;
     }
+
 
     if(playerScore > computerScore){
         console.log("Overall Winner: Player");
@@ -71,7 +73,14 @@ function game(){
     }
 
     playerScore = 0;
-    computerScore = 0;
+    computerScore = 0;     
+
+    
 }
+
+   
+
+    
+
 
 game();
