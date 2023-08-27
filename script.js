@@ -5,6 +5,7 @@ function getComputerChoice(){
     //let choices = ["Rock", "Paper", "Scissors"];
     let randomNumber = Math.floor(Math.random() * 3);
     let randomChoice = choices[randomNumber];
+    console.log("computer choice: " + randomChoice);
     return randomChoice;
 }
 
@@ -15,7 +16,7 @@ function playGame(playerSelection, computerSelection){
         case "rock":
             playerSelection = 1;
             break;
-        
+
         case "paper":
             playerSelection = 2;
             break;
@@ -27,15 +28,20 @@ function playGame(playerSelection, computerSelection){
             playerSelection = 100;
             break;
     }
+
+    let computerSelectionIndex = choices.indexOf(computerSelection)+1;
+    console.log("p: " + playerSelection);
+    console.log("c: " + computerSelectionIndex);
     
-    let checkWinner = playerSelection - choices.indexOf(computerSelection)+1;
+    let checkWinner = computerSelectionIndex - playerSelection;
+    console.log(checkWinner);
 
     let winner;
     if(checkWinner == -1 || checkWinner == 2){
         winner = "Player wins!";
     }else if(checkWinner == 1 || checkWinner == -2){
         winner = "Computer wins!";
-    }else{
+    }else if(checkWinner == 0){
         winner = "Draw";
     }
 
@@ -43,4 +49,5 @@ function playGame(playerSelection, computerSelection){
 }
 
 let playerSelection = "rock";
-console.log(playGame(playerSelection, getComputerChoice));
+console.log("player choice: " + playerSelection);
+console.log(playGame(playerSelection, getComputerChoice()));
