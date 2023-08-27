@@ -50,7 +50,7 @@ function game(){
     let roundCounter = 0;
     let maxScore = 5;
 
-    while(playerScore < maxScore || computerScore < maxScore){
+    while(playerScore < maxScore && computerScore < maxScore){
         let playerSelection = prompt("Rock, Paper, Scissors");
         let computerSelection = getComputerChoice();
 
