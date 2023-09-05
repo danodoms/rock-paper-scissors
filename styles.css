@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    border: 2px solid white;
+}
+
+.title {
+    margin: auto;
+    padding: 50px;
+}
+.choices {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    /* border: 2px solid white; */
+    align-items: center;
+    color: black;
+}
+ 
+.choices div {
+    width: 200px;
+    height: 200px;
+    background-color: skyblue;
+    /* border: 2px solid skyblue;
+    border-radius: 30px; */
+}
+
+.play-btn {
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    padding: 20px 330px 20px 330px;
+    background-color: skyblue;
+    /* border: 2px solid white; */
+}
+
+body {
+    background-color: black;
+}

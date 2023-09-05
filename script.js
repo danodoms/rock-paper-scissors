@@ -43,6 +43,12 @@ function playRound(playerSelection, computerSelection){
     }else{
         winner = "Invalid Choice, retry";
     }
+
+
+    console.log("Player: " + playerSelection);
+    console.log("Computer: " + computerSelection);
+    console.log(winner);
+    console.log("");
     return winner;
 }
 
@@ -73,14 +79,23 @@ function game(){
     }
 
     playerScore = 0;
-    computerScore = 0;     
-
-    
+    computerScore = 0;      
 }
 
-   
+const rockBtn = document.querySelector('.rock-btn');
+const paperBtn = document.querySelector('.paper-btn');
+const scissorsBtn = document.querySelector('.scissors-btn');
+const display = document.querySelector('.display');
 
-    
+rockBtn.addEventListener('click', () => {
+    playRound('rock', getComputerChoice());
+});
 
+paperBtn.addEventListener('click', () => {
+    playRound('paper', getComputerChoice());
+});
 
-game();
+scissorsBtn.addEventListener('click', () => {
+    playRound('scissors', getComputerChoice());
+});
+//game();
