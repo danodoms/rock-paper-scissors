@@ -8,6 +8,11 @@ function displayScores(){
 }
 
 function displayRoundWinner(winner){
+
+    // playerScoreDisplay.textContent = `PLAYER: ${playerScore}`;
+    // computerScoreDisplay.textContent = `COMPUTER: ${computerScore}`;
+    scoreDisplay.innerHTML = `PLAYER: ${playerScore}<br>COMPUTER: ${computerScore}`;
+
     if(winner == 'Draw'){
         winnerDisplay.textContent = winner;   
     }else{
@@ -112,6 +117,8 @@ const scissorsBtn = document.querySelector('.scissors-btn');
 const display = document.querySelector('.display');
 const winnerDisplay = document.querySelector('.winner-display');
 const scoreDisplay = document.querySelector('.score-display');
+// const playerScoreDisplay = document.querySelector('.score-display');
+// const computerScoreDisplay = playerScoreDisplay.nextElementSibling; 
 
 rockBtn.addEventListener('click', () => {
     playRound('rock', getComputerChoice());
